@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import GlobalApi from "../_utils/GlobalApi";
 import Image from "next/image";
+import Link from "next/link";
 
 function CategorySeach() {
   const [categoryList, setCategotyList] = useState([]);
@@ -33,27 +34,38 @@ function CategorySeach() {
           Search
         </Button>
       </div>
-      <div className="grid grid-cols-3 mt-5 md:grid-cols-6 lg:grid-col-6">
-        {categoryList.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col text-center items-center p-5 bg-teal-50 m-2 rounded-lg cursor-pointer gap-2 hover:scale-110 transition-all ease-in-out"
-          >
-            <Image
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_BASE_URL +
-                item.attributes?.Icon?.data.attributes?.url
-              }
-              unoptimized={true}
-              alt="icon"
-              width={40}
-              height={40}
-            />
-            <label className="text-teal-600 text-sm">
-              {item?.attributes?.Name}
-            </label>
-          </div>
-        ))}
+
+      <div className="grid grid-cols-3 mt-5 md:grid-cols-4 lg:grid-cols-6 ">
+        {categoryList.length > 0
+          ? categoryList.map(
+              (item, index) =>
+                index < 9 && (
+                  <Link
+                    href={"/search/" + item.attributes.Name}
+                    key={index}
+                    className="flex flex-col text-center items-center p-5 bg-teal-50 m-2 rounded-lg cursor-pointer gap-2 hover:scale-110 transition-all ease-in-out"
+                  >
+                    <Image
+                      src={
+                        process.env.NEXT_PUBLIC_BACKEND_BASE_URL +
+                        item.attributes?.Icon?.data.attributes?.url
+                      }
+                      alt="icon"
+                      width={40}
+                      height={40}
+                    />
+                    <label className="text-teal-600 text-sm">
+                      {item?.attributes?.Name}
+                    </label>
+                  </Link>
+                )
+            )
+          : [1, 2, 3, 4, 5, 6].map((item, index) => (
+              <div
+                className=" bg-slate-200 m-2 w-[130px] h-[120px] rounded-lg animate-pulse"
+                key={index}
+              ></div>
+            ))}
       </div>
     </div>
   );
