@@ -60,13 +60,13 @@ function BookAppointment({ doctor }) {
         Note: note,
       },
     };
-    // console.log(data)
+    // console.log(data);
     GlobalApi.bookAppointment(data).then((resp) => {
       console.log(resp);
       if (resp) {
-        GlobalApi.sendEmail(data).then((resp) => {
-          console.log(resp);
-        });
+        // GlobalApi.sendEmail(data).then((resp) => {
+        //   console.log(resp);
+        // });
         toast("Booking Confirmation sent on Email");
       }
     });
@@ -78,7 +78,9 @@ function BookAppointment({ doctor }) {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button className="mt-3 rounded-full">Book Appointment</Button>
+        <div>
+          <Button className="mt-3 rounded-full">Book Appointment</Button>
+        </div>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -112,6 +114,7 @@ function BookAppointment({ doctor }) {
                   >
                     {timeSlot?.map((item, index) => (
                       <h2
+                        key={index}
                         onClick={() => setSelectedTimeSlot(item.time)}
                         className={`p-2 border cursor-pointer
                             text-center hover:bg-primary hover:text-white
@@ -137,7 +140,7 @@ function BookAppointment({ doctor }) {
         </DialogHeader>
         <DialogFooter className="sm:justify-end">
           <DialogClose asChild>
-            <>
+            <div>
               <Button
                 type="button"
                 className="text-red-500 border-red-500"
@@ -152,7 +155,7 @@ function BookAppointment({ doctor }) {
               >
                 Submit
               </Button>
-            </>
+            </div>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

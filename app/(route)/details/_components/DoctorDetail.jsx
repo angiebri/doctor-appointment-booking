@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { GraduationCap, MapPin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-//import BookAppointment from "./BookAppointment";
+import BookAppointment from "./BookAppointment";
 
 function DoctorDetail({ doctor }) {
   const socialMediaList = [
@@ -70,7 +70,7 @@ function DoctorDetail({ doctor }) {
               />
             ))}
           </div>
-          {/*<BookAppointment doctor={doctor} />*/}
+          <BookAppointment doctor={doctor} />
         </div>
 
         {/* About Doctor  */}
