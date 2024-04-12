@@ -7,6 +7,7 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "doctor-book-admin.onrender.com",
     ],
+    unoptimized: true,
   },
 };
 
