@@ -31,6 +31,11 @@ function Header() {
       name: "Contact Us",
       path: "/contact",
     },
+    {
+      id: 4,
+      name: "kek",
+      path: "/api/auth/kinde_callback",
+    },
   ];
   const { user } = useKindeBrowserClient();
 
