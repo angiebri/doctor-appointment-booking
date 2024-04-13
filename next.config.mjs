@@ -2,11 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: [
-      "localhost",
-      "lh3.googleusercontent.com",
-      "doctor-book-admin.onrender.com",
-    ],
+    domains: ["localhost", "lh3.googleusercontent.com"],
   },
 };
 
