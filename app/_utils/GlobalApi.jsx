@@ -4,6 +4,8 @@ const { default: axios } = require("axios");
 
 const axiosClient = axios.create({
   baseURL: "http://localhost:1337/api",
+  //"https://doctor-book-admin.onrender.com/api"
+
   //headers:{
   //    'Authorization':`Bearer ${API_KEY}`
   //}
@@ -22,10 +24,24 @@ const getDoctorById = (id) => axiosClient.get("/doctors/" + id + "?populate=*");
 
 const bookAppointment = (data) => axiosClient.post("/appointments", data);
 
+const getUserBookingList = (userEmail) =>
+  axiosClient.get(
+    "/appointments?[filters][Email][$eq]=" +
+      userEmail +
+      "&populate[doctor][populate][image][populate][0]=url&populate=*"
+  );
+
+const deleteBooking = (id) => axiosClient.delete("/appointments/" + id);
+
+const sendEmail = (data) => axios.post("/api/sendEmail", data);
+
 export default {
   getCategory,
   getDoctorList,
   getDoctorByCategory,
   getDoctorById,
   bookAppointment,
+  getUserBookingList,
+  deleteBooking,
+  sendEmail,
 };
