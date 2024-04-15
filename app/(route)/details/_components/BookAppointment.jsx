@@ -60,12 +60,12 @@ function BookAppointment({ doctor }) {
         Note: note,
       },
     };
-    // console.log(data);
+    console.log(data);
     GlobalApi.bookAppointment(data).then((resp) => {
-      console.log(resp);
+      //console.log(resp);
       if (resp) {
         GlobalApi.sendEmail(data).then((resp) => {
-          console.log(resp);
+          //console.log(resp);
         });
         toast("Booking Confirmation sent on Email");
       }

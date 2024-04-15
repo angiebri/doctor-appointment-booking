@@ -17,7 +17,10 @@ function Search({ params }) {
   };
   return (
     <div className="mt-5">
-      <DoctorList heading={params.cname} doctorList={doctorList} />
+      <DoctorList
+        heading={params.cname.replace("%20", " ")}
+        doctorList={doctorList}
+      />
     </div>
   );
 }

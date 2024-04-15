@@ -16,45 +16,49 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
-export const EmailTemplate = ({ userFirstname = "Test User" }) => (
-  <Html>
-    <Head />
-    <Preview>
-      The sales intelligence platform that helps you uncover qualified leads.
-    </Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Img
-          src={`${baseUrl}/logo.svg`}
-          width="170"
-          height="50"
-          alt="Koala"
-          style={logo}
-        />
-        <Text style={paragraph}>Hi {userFirstname},</Text>
-        <Text style={paragraph}>
-          Welcome to Koala, the sales intelligence platform that helps you
-          uncover qualified leads and close deals faster.
-        </Text>
-        <Section style={btnContainer}>
-          <Button style={button} href="https://getkoala.com">
-            Get started
-          </Button>
-        </Section>
-        <Text style={paragraph}>
-          Best,
-          <br />
-          The Koala team
-        </Text>
-        <Hr style={hr} />
-        <Text style={footer}>
-          470 Noor Ave STE B #1148, South San Francisco, CA 94080
-        </Text>
-      </Container>
-    </Body>
-  </Html>
-);
+export const EmailTemplate = ({
+  UserName,
+  Email,
+  Time,
+  Date,
+  doctor,
+  Note,
+}) => {
+  //console.log("userName", UserName);
+  return (
+    <Html>
+      <Head />
+      <Preview>Your Appointment with Doctor has booked.</Preview>
+      <Body style={main}>
+        <Container style={container}>
+          <Img
+            src={`${baseUrl}/logo.svg`}
+            width="170"
+            height="50"
+            alt="Medcorder"
+            style={logo}
+          />
+          <Text style={paragraph}>Hi {UserName},</Text>
+          <Text style={paragraph}>
+            Your Appointment with Doctor {doctor} has booked on {Date} at {Time}
+          </Text>
 
+          <Button style={button} href={`${baseUrl}/my-booking`}>
+            My Booking
+          </Button>
+
+          <Text style={paragraph}>
+            Best,
+            <br />
+            The Medcorder team
+          </Text>
+          <Hr style={hr} />
+          <Text style={footer}>Developed by Angiebri</Text>
+        </Container>
+      </Body>
+    </Html>
+  );
+};
 export default EmailTemplate;
 
 const main = {
@@ -82,7 +86,7 @@ const btnContainer = {
 };
 
 const button = {
-  backgroundColor: "#5F51E8",
+  backgroundColor: "#01abaa",
   borderRadius: "3px",
   color: "#fff",
   fontSize: "16px",

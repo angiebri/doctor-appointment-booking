@@ -15,14 +15,15 @@ import { usePathname } from "next/navigation";
 
 function CategoryList() {
   const params = usePathname();
-  const category = params.split("/")[2];
+  const category = params.replace("%20", " ").split("/")[2];
+
   const [categoryList, setCategotyList] = useState([]);
   useEffect(() => {
     getCategoryList();
   }, []);
   const getCategoryList = () => {
     GlobalApi.getCategory().then((resp) => {
-      console.log(resp.data.data);
+      //console.log(resp.data.data);
       setCategotyList(resp.data.data);
     });
   };
@@ -51,6 +52,7 @@ function CategoryList() {
                       alt="icon"
                       width={25}
                       height={25}
+                      priority
                     />
                     <label>{item.attributes.Name}</label>
                   </Link>

@@ -11,7 +11,7 @@ function DoctorSuggestionList() {
   }, []);
   const getDoctorList = () => {
     GlobalApi.getDoctorList().then((resp) => {
-      console.log(resp.data.data);
+      //console.log(resp.data.data);
       setDoctorList(resp.data.data);
     });
   };
@@ -34,6 +34,7 @@ function DoctorSuggestionList() {
             height={70}
             alt="doctor"
             className="w-[70px] h-[70px] rounded-full object-cover"
+            priority
           />
           <div className="mt-3 flex-col flex gap-1 items-baseline">
             <h2 className="text-[10px] bg-teal-100 p-1 rounded-full px-2 text-primary">

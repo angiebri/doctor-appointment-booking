@@ -13,7 +13,7 @@ function MyBooking() {
   }, [user]);
   const getUserBookingList = () => {
     GlobalApi.getUserBookingList(user?.email).then((resp) => {
-      console.log(resp.data.data);
+      //console.log(resp.data.data);
       setBookingList(resp.data.data);
     });
   };
@@ -29,7 +29,7 @@ function MyBooking() {
         ? new Date(item.attributes.Date) >= new Date()
         : new Date(item.attributes.Date) <= new Date()
     );
-    console.log(result);
+    //console.log(result);
     return result;
   };
   return (

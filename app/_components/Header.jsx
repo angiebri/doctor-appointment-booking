@@ -50,6 +50,7 @@ function Header() {
           width={180}
           height={80}
           className="h-auto w-full"
+          priority
         />
         <ul className="md:flex gap-8 hidden">
           {Menu.map((item, index) => (
@@ -74,6 +75,7 @@ function Header() {
               width={50}
               height={50}
               className="rounded-full"
+              priority
             />
           </PopoverTrigger>
           <PopoverContent className="w-44">

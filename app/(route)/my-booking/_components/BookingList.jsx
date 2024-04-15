@@ -9,9 +9,9 @@ import { toast } from "sonner";
 
 function BookingList({ bookingList, expired, updateRecord }) {
   const onDeleteBooking = (item) => {
-    console.log(item);
+    //console.log(item);
     GlobalApi.deleteBooking(item.id).then((resp) => {
-      console.log(resp);
+      //console.log(resp);
       if (resp) {
         toast("Booking Delete Successfully!");
         updateRecord();
@@ -33,6 +33,7 @@ function BookingList({ bookingList, expired, updateRecord }) {
               width={70}
               height={70}
               alt="doctor-image"
+              priority
             />
             <div className="flex flex-col gap-2 w-full">
               <h2 className="font-bold text-[18px] items-center flex justify-between">

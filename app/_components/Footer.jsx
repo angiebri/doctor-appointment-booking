@@ -11,6 +11,7 @@ function Footer() {
           width={200}
           height={100}
           className="w-auto h-full"
+          priority
         />
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt

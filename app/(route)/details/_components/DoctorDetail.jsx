@@ -67,6 +67,7 @@ function DoctorDetail({ doctor }) {
                 width={30}
                 height={30}
                 alt="social-media"
+                priority
               />
             ))}
           </div>

@@ -14,7 +14,7 @@ function CategorySeach() {
   }, []);
   const getCategoryList = () => {
     GlobalApi.getCategory().then((resp) => {
-      console.log(resp.data.data);
+      //console.log(resp.data.data);
       setCategotyList(resp.data.data);
     });
   };
@@ -53,6 +53,7 @@ function CategorySeach() {
                       alt="icon"
                       width={40}
                       height={40}
+                      priority
                     />
                     <label className="text-teal-600 text-sm">
                       {item?.attributes?.Name}
