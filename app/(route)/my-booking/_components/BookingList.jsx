@@ -22,7 +22,10 @@ function BookingList({ bookingList, expired, updateRecord }) {
     <div>
       {bookingList.length > 0 ? (
         bookingList.map((item, index) => (
-          <div className=" flex gap-4 items-center border p-5 m-3 rounded-lg">
+          <div
+            key={index}
+            className=" flex gap-4 items-center border p-5 m-3 rounded-lg"
+          >
             <Image
               src={
                 process.env.NEXT_PUBLIC_BACKEND_BASE_URL +
@@ -61,7 +64,7 @@ function BookingList({ bookingList, expired, updateRecord }) {
           </div>
         ))
       ) : (
-        <div className="h-[150px] w-full bg-slate-100 animate-pulse rounded-lg"></div>
+        <div className="h-[150px] w-full bg-slate-100 animate-pulse rounded-lg" />
       )}
     </div>
   );

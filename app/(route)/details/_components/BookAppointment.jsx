@@ -22,7 +22,9 @@ function BookAppointment({ doctor }) {
   const [timeSlot, setTimeSlot] = useState();
   const [selectedTimeSlot, setSelectedTimeSlot] = useState();
   const [note, setNote] = useState();
+
   const { user } = useKindeBrowserClient();
+
   useEffect(() => {
     getTime();
   }, []);
@@ -72,9 +74,8 @@ function BookAppointment({ doctor }) {
     });
   };
 
-  const isPastDay = (day) => {
-    return day <= new Date();
-  };
+  const isPastDay = (day) => day <= new Date();
+
   return (
     <Dialog>
       <DialogTrigger>

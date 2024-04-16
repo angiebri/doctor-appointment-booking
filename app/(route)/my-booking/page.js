@@ -8,9 +8,11 @@ import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 function MyBooking() {
   const { user } = useKindeBrowserClient();
   const [bookingList, setBookingList] = useState([]);
+
   useEffect(() => {
     user && getUserBookingList();
   }, [user]);
+
   const getUserBookingList = () => {
     GlobalApi.getUserBookingList(user?.email).then((resp) => {
       //console.log(resp.data.data);
