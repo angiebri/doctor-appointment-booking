@@ -28,7 +28,7 @@ function Header() {
     },
     {
       id: 3,
-      name: "Contact Us",
+      name: "Contact",
       path: "/contact",
     },
   ];
@@ -77,6 +77,12 @@ function Header() {
           </PopoverTrigger>
           <PopoverContent className="w-44">
             <ul className="flex flex-col gap-2">
+              <Link
+                href={"/"}
+                className="cursor-pointer hover:bg-slate-100 p-2 rounded-md"
+              >
+                Home
+              </Link>
               <li className="cursor-pointer hover:bg-slate-100 p-2 rounded-md">
                 Profile
               </li>

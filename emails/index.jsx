@@ -11,6 +11,7 @@ import {
   Text,
 } from "@react-email/components";
 import * as React from "react";
+import moment from "moment";
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -33,19 +34,15 @@ export const EmailTemplate = ({ UserName, Time, Date, doctorName }) => {
           />
           <Text style={paragraph}>Hi {UserName},</Text>
           <Text style={paragraph}>
-            Your Appointment with Doctor {doctorName} has booked on {Date} at{" "}
-            {Time}
+            Your Appointment with doctor <b>{doctorName}</b> has booked on{" "}
+            <b>{moment(Date).format("DD-MMM-YYYY")}</b> at <b>{Time}</b>
           </Text>
-          <Section>
+          <Section style={btnContainer}>
             <Button style={button} href={`${baseUrl}/my-booking`}>
               My Booking
             </Button>
           </Section>
-          <Text style={paragraph}>
-            Best,
-            <br />
-            The Medcorder team
-          </Text>
+          <Text style={paragraph}>Best, The Medcorder team</Text>
           <Hr style={hr} />
           <Text style={footer}>Developed by Angiebri</Text>
         </Container>

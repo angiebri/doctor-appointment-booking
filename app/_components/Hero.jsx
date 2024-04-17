@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/image";
 import Image from "next/image";
 import React from "react";
 
@@ -25,13 +26,16 @@ function Hero() {
             </h2>
 
             <p className="mt-4 text-gray-600">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-              hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-              minus veniam tempora deserunt? Molestiae eius quidem quam
-              repellat.
+              At Medcorder, we understand that your health is your most valuable
+              asset. That's why we've designed a seamless clinic appointment
+              service to ensure you receive the care you need, when you need it.
             </p>
-
-            <Button className="mt-10">Explore Now</Button>
+            <p className="mt-4 text-gray-600">
+              With Medcorder, you have instant access to a network of trusted
+              healthcare providers, right at your fingertips. Whether you're
+              seeking a routine check-up, specialist consultation, or urgent
+              care, we've got you covered.
+            </p>
           </div>
         </div>
       </div>
