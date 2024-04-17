@@ -65,7 +65,7 @@ function CategorySeach() {
               <div
                 className=" bg-slate-200 m-2 w-[130px] h-[120px] rounded-lg animate-pulse"
                 key={index}
-              ></div>
+              />
             ))}
       </div>
     </div>
