@@ -22,7 +22,8 @@ const getDoctorByCategory = (category) =>
 
 const getDoctorById = (id) => axiosClient.get("/doctors/" + id + "?populate=*");
 
-const bookAppointment = (data) => axiosClient.post("/appointments", data);
+const bookAppointment = (data) =>
+  axiosClient.post("/appointments?populate=*", data);
 
 const getUserBookingList = (userEmail) =>
   axiosClient.get(

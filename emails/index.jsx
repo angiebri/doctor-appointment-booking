@@ -16,14 +16,7 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
-export const EmailTemplate = ({
-  UserName,
-  Email,
-  Time,
-  Date,
-  doctor,
-  Note,
-}) => {
+export const EmailTemplate = ({ UserName, Time, Date, doctorName }) => {
   //console.log("userName", UserName);
   return (
     <Html>
@@ -40,13 +33,14 @@ export const EmailTemplate = ({
           />
           <Text style={paragraph}>Hi {UserName},</Text>
           <Text style={paragraph}>
-            Your Appointment with Doctor {doctor} has booked on {Date} at {Time}
+            Your Appointment with Doctor {doctorName} has booked on {Date} at{" "}
+            {Time}
           </Text>
-
-          <Button style={button} href={`${baseUrl}/my-booking`}>
-            My Booking
-          </Button>
-
+          <Section>
+            <Button style={button} href={`${baseUrl}/my-booking`}>
+              My Booking
+            </Button>
+          </Section>
           <Text style={paragraph}>
             Best,
             <br />

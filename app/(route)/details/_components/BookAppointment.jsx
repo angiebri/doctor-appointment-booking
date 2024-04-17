@@ -59,15 +59,17 @@ function BookAppointment({ doctor }) {
         Time: selectedTimeSlot,
         Date: date,
         doctor: doctor.id,
+        doctorName: doctor.attributes.Name,
         Note: note,
       },
     };
-    console.log(data);
+    console.log("1", data);
+    console.log("2", doctor.attributes.Name);
     GlobalApi.bookAppointment(data).then((resp) => {
-      //console.log(resp);
+      console.log("3", resp);
       if (resp) {
         GlobalApi.sendEmail(data).then((resp) => {
-          //console.log(resp);
+          console.log("4", resp);
         });
         toast("Booking Confirmation sent on Email");
       }
