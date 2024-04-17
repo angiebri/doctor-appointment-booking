@@ -5,9 +5,9 @@ const nextConfig = {
     domains: [
       "localhost",
       "lh3.googleusercontent.com",
-      //,"doctor-book-admin.onrender.com",
+      "doctor-book-admin.onrender.com",
     ],
-    //unoptimized: true,
+    unoptimized: true,
   },
 };
 
