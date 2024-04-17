@@ -17,7 +17,7 @@ function CancelAppointment({ onContinueClick }) {
     <AlertDialog>
       <AlertDialogTrigger>
         <Button variant="outline" className="text-primary border-primary">
-          Cancel Appointment
+          Cancel
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>

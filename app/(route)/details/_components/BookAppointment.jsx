@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import { toast } from "sonner";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 function BookAppointment({ doctor }) {
   const [date, setDate] = useState(new Date());
@@ -88,58 +89,60 @@ function BookAppointment({ doctor }) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Book Appointment</DialogTitle>
-          <DialogDescription>
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
-                {/* Calender  */}
-                <div className="flex flex-col   gap-3 items-baseline">
-                  <h2 className="flex gap-2 items-center">
-                    <CalendarDays className="text-primary h-5 w-5" />
-                    Select Date
-                  </h2>
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    disabled={isPastDay}
-                    className="rounded-md border"
-                  />
-                </div>
-                {/* Time Slot  */}
-                <div className=" mt-3 md:mt-0">
-                  <h2 className="flex gap-2 items-center mb-3">
-                    <Clock className="text-primary h-5 w-5" />
-                    Select Time Slot
-                  </h2>
-                  <div
-                    className="grid grid-cols-3 gap-2 border 
+          <ScrollArea className="h-[550px] p-1">
+            <DialogDescription>
+              <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
+                  {/* Calender  */}
+                  <div className="flex flex-col   gap-3 items-baseline">
+                    <h2 className="flex gap-2 items-center">
+                      <CalendarDays className="text-primary h-5 w-5" />
+                      Select Date
+                    </h2>
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      disabled={isPastDay}
+                      className="rounded-md border"
+                    />
+                  </div>
+                  {/* Time Slot  */}
+                  <div className=" mt-3 md:mt-0">
+                    <h2 className="flex gap-2 items-center mb-3">
+                      <Clock className="text-primary h-5 w-5" />
+                      Select Time Slot
+                    </h2>
+                    <div
+                      className="grid grid-cols-3 gap-2 border 
                         rounded-lg p-5"
-                  >
-                    {timeSlot?.map((item, index) => (
-                      <h2
-                        key={index}
-                        onClick={() => setSelectedTimeSlot(item.time)}
-                        className={`p-2 border cursor-pointer
+                    >
+                      {timeSlot?.map((item, index) => (
+                        <h2
+                          key={index}
+                          onClick={() => setSelectedTimeSlot(item.time)}
+                          className={`p-2 border cursor-pointer
                             text-center hover:bg-primary hover:text-white
                             rounded-full
                             ${
                               item.time == selectedTimeSlot &&
                               "bg-primary text-white"
                             }`}
-                      >
-                        {item.time}
-                      </h2>
-                    ))}
+                        >
+                          {item.time}
+                        </h2>
+                      ))}
+                    </div>
                   </div>
                 </div>
+                <Textarea
+                  className="mt-3"
+                  placeholder="Note"
+                  onChange={(e) => setNote(e.target.value)}
+                />
               </div>
-              <Textarea
-                className="mt-3"
-                placeholder="Note"
-                onChange={(e) => setNote(e.target.value)}
-              />
-            </div>
-          </DialogDescription>
+            </DialogDescription>
+          </ScrollArea>
         </DialogHeader>
         <DialogFooter className="sm:justify-end">
           <DialogClose asChild>
