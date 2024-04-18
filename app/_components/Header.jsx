@@ -66,14 +66,25 @@ function Header() {
       {user ? (
         <Popover>
           <PopoverTrigger>
-            <Image
-              src={user?.picture}
-              alt="profile-image"
-              width={50}
-              height={50}
-              className="rounded-full"
-              priority
-            />
+            {user?.picture ? (
+              <Image
+                src={user?.picture}
+                alt="profile-image"
+                width={50}
+                height={50}
+                className="rounded-full"
+                priority
+              />
+            ) : (
+              <Image
+                src="/user.jpg"
+                alt="profile-image"
+                width={50}
+                height={50}
+                className="rounded-full"
+                priority
+              />
+            )}
           </PopoverTrigger>
           <PopoverContent className="w-44">
             <ul className="flex flex-col gap-2">
@@ -83,9 +94,12 @@ function Header() {
               >
                 Home
               </Link>
-              <li className="cursor-pointer hover:bg-slate-100 p-2 rounded-md">
+              <Link
+                href={"/profile"}
+                className="cursor-pointer hover:bg-slate-100 p-2 rounded-md"
+              >
                 Profile
-              </li>
+              </Link>
               <Link
                 href={"/my-booking"}
                 className="cursor-pointer hover:bg-slate-100 p-2 rounded-md"
