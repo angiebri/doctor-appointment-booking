@@ -31,11 +31,6 @@ function Header() {
       name: "Contact",
       path: "/contact",
     },
-    {
-      id: 4,
-      name: "Contact",
-      path: "/contact",
-    },
   ];
   const { user } = useKindeBrowserClient();
 
