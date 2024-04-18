@@ -13,8 +13,8 @@ import {
 import * as React from "react";
 import moment from "moment";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `${NEXT_PUBLIC_VERCEL_URL}`
+const baseUrl = process.env.DOMAIN
+  ? `https://${process.env.DOMAIN}`
   : "http://localhost:3000";
 
 export const EmailTemplate = ({ UserName, Time, Date, doctorName }) => {
