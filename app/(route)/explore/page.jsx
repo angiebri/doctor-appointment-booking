@@ -57,6 +57,7 @@ function Explore() {
                 quick and easy. Simply select your preferred date and time, and
                 you're all set.
               </li>
+              <br />
             </ul>
           </div>
         </div>
