@@ -31,6 +31,7 @@ export const EmailTemplate = ({ UserName, Time, Date, doctorName }) => {
             height="50"
             alt="Medcorder"
             style={logo}
+            priority="true"
           />
           <Text style={paragraph}>Hi {UserName},</Text>
           <Text style={paragraph}>
