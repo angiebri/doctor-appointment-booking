@@ -1,10 +1,10 @@
-import { Outfit } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import { Toaster } from "sonner";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={rubik.className}>
         <div className="mb:px-20">
           <Header />
           {children}
