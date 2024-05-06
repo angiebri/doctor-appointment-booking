@@ -53,7 +53,7 @@ function Profile() {
           role="none"
           className="shrink-0 bg-border h-[1px] w-full"
         />
-        <form className="grid grid-cols-2 gap-6">
+        <form className="grid sm:grid-cols-2 md:grid-cols-2 gap-6">
           <div>
             <h2 className="text-gray-500">First Name</h2>
             <h2>{user?.given_name}</h2>
